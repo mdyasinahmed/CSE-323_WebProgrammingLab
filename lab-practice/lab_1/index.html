@@ -5,101 +5,417 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        /* Imported Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-        
-        /* In General CSS */
-        body{
-            font-family: "Ubuntu", sans-serif;
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
             font-weight: 200;
             font-style: normal;
             background-color: blueviolet;
             color: white;
+            margin: 0;
         }
-        .container{
-            margin: 0px 10px;
-            padding: 0px 5px;
+
+        .container {
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: auto;
         }
-        .section_header{
-            margin: 0px auto;
+
+        .section_header {
             text-align: center;
-            line-height: 5px;
+            margin: 40px 0;
         }
-        .my_filled_button{
+
+        .my_filled_button {
             background-color: white;
             color: blueviolet;
             font-weight: 700;
             text-decoration: none;
-            padding: 5px 25px;
+            padding: 10px 25px;
+            margin: 10px 5px;
+            display: inline-block;
         }
-        
-        /* Main Body CSS */
-        /* hero-section */
-        .hero-body{
+        /* Header Section */
+        header{
+            position: fixed;
+            margin: 0 auto !important;
+        }
+        /* Navigation Bar */
+        .navbar {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgb(49, 9, 70);
         }
-        .hero_text{
-            padding: 100px 50px !important;
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
-        .hero_image{
+
+        .navbar li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero_text {
             padding: 50px;
-            margin: 50px;
-            border-radius: 5px;
         }
-        .hero_image img{
+
+        .hero_image img {
             border: 5px solid rgb(180, 112, 245);
+            border-radius: 5px;
+            max-width: 100%;
         }
-        /* About Section CSS */
-        .about_body{
-            margin: 0px 50px;
+
+        /* About Section */
+        .about_section {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
         }
-        .about_body .about_text p{
-            line-height: 25px;
+
+        .about_body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about_image, .about_text {
+            padding: 20px;
+        }
+
+        .about_image {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about_text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about_image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .about_text p {
+            line-height: 1.5;
+        }
+
+        .about_text .download_button {
+            margin-top: 20px;
+        }
+
+        /* Project Section */
+        .project_section {
+            text-align: center;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: 300px;
+            text-align: left;
+        }
+
+        /* Blog Section */
+        .blog_section {
+            text-align: center;
+        }
+
+        .blogs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .blog {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: 300px;
+            text-align: left;
+        }
+
+        /* Contact Section */
+        .contact_section {
+            text-align: center;
+        }
+
+        .contact_body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact_info, .contact_form {
+            padding: 20px;
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .contact_form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact_form input, .contact_form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .contact_form button {
+            padding: 10px 20px;
+            font-weight: 700;
+            background-color: white;
+            color: blueviolet;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(49, 9, 70);
         }
     </style>
 </head>
 <body>
-    <!-- header section -->
+    <!-- Navigation Bar -->
     <header>
-        <section class="hero-section container" style="height: 400px; width: 100%;">
-            <div class="hero-body">
-                <div class="hero_text">
-                    <h3 style="text-align: start;">Hi there,</h3>
-                    <h1>I'm <span>YASIN AHMED</span></h1>
-                    <h4>Junior Developer, Flutter | MERN</h4>
-                    <a href="https://github.com/mdyasinahmed" class="my_filled_button" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/mdyasiin/" class="my_filled_button"  target="_blank">Linkedin</a>
-                </div>
-                <div class="hero_image">
-                    <img src="assets/images/mdyasin.jpg" height="200px" alt="">
-                </div>
-            </div>
-        </section>
+        <div class="navbar container">
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- main section starts-->
-    <main>
-        <section class="about_section container">
-            <div class="section_header">
-                <h2>Who I'm?</h2>
-                <h4>Read about me</h4>
-            </div>
-            <div class="about_body">
-                <div class="about_image">
-                    <img src="assets/images/about.png" alt="" height="400px" width="400px">
-                </div>
-                <div class="about_text">
-                    <p>I am pursuing a Bachelor's degree in Computer Science and Engineering, with a passion for problem-solving and mobile application development. Alongside my studies, I actively engage in problem-solving on various platforms and work on app development projects for both online and offline marketplaces. My expertise lies in Flutter mobile application development, where I strive to create efficient, user-friendly, and visually appealing applications for users.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- main section ends-->
-    <!-- footer section starts -->
-    <footer>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section container">
+        <div class="hero_text">
+            <h3>Hi there,</h3>
+            <h1>I'm <span>YASIN AHMED</span></h1>
+            <h4>Junior Developer, Flutter | MERN</h4>
+            <a href="https://github.com/mdyasinahmed" class="my_filled_button" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/mdyasiin/" class="my_filled_button" target="_blank">LinkedIn</a>
+        </div>
+        <div class="hero_image">
+            <img src="assets/images/mdyasin.jpg" height="200px" alt="Yasin Ahmed">
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="about_section container">
+        <div class="section_header">
+            <h2>Who I'm?</h2>
+            <h4>Read about me</h4>
+        </div>
+        <div class="about_body">
+            <div class="about_image">
+                <img src="assets/images/about.png" alt="About Image" height="400px" width="400px">
+            </div>
+            <div class="about_text">
+                <p>I am pursuing a Bachelor's degree in Computer Science and Engineering, with a passion for problem-solving and mobile application development. Alongside my studies, I actively engage in problem-solving on various platforms and work on app development projects for both online and offline marketplaces. My expertise lies in Flutter mobile application development, where I strive to create efficient, user-friendly, and visually appealing applications for users.</p>
+                <a href="assets/resume.pdf" class="my_filled_button download_button" target="_blank">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="project_section container">
+        <div class="section_header">
+            <h2>Projects</h2>
+            <h4>Some of my work</h4>
+        </div>
+        <div class="projects">
+            <div class="project">
+                <h3>Live Products</h3>
+                <div class="project">
+                    <img src="assets/images/project1.jpg" alt="Project 1" width="100%">
+                    <h4>Project 1</h4>
+                    <p>Description of Project 1.</p>
+                </div>
+                <div class="project">
+                    <img src="assets/images/project2.jpg" alt="Project 2" width="100%">
+                    <h4>Project 2</h4>
+                    <p>Description of Project 2.</p>
+                </div>
+            </div>
+            <div class="project">
+                <h3>Practice Projects</h3>
+                <div class="project">
+                    <img src="assets/images/project3.jpg" alt="Project 3" width="100%">
+                    <h4>Project 3</h4>
+                    <p>Description of Project 3.</p>
+                </div>
+                <div class="project">
+                    <img src="assets/images/project4.jpg" alt="Project 4" width="100%">
+                    <h4>Project 4</h4>
+                    <p>Description of Project 4.</p>
+                </div>
+            </div>
+            <div class="project">
+                <h3>Undergraduate Projects</h3>
+                <div class="project">
+                    <img src="assets/images/project5.jpg" alt="Project 5" width="100%">
+                    <h4>Project 5</h4>
+                    <p>Description of Project 5.</p>
+                </div>
+                <div class="project">
+                    <img src="assets/images/project6.jpg" alt="Project 6" width="100%">
+                    <h4>Project 6</h4>
+                    <p>Description of Project 6.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blog_section container">
+        <div class="section_header">
+            <h2>Blogs</h2>
+            <h4>My thoughts and writings</h4>
+        </div>
+        <div class="blogs">
+            <div class="blog">
+                <h3>Technical Writings</h3>
+                <div class="blog">
+                    <img src="assets/images/blog1.jpg" alt="Blog 1" width="100%">
+                    <h4>Blog Post 1</h4>
+                    <p>Summary of Blog Post 1.</p>
+                </div>
+                <div class="blog">
+                    <img src="assets/images/blog2.jpg" alt="Blog 2" width="100%">
+                    <h4>Blog Post 2</h4>
+                    <p>Summary of Blog Post 2.</p>
+                </div>
+            </div>
+            <div class="blog">
+                <h3>CS Study Blogs</h3>
+                <div class="blog">
+                    <img src="assets/images/blog3.jpg" alt="Blog 3" width="100%">
+                    <h4>Blog Post 3</h4>
+                    <p>Summary of Blog Post 3.</p>
+                </div>
+                <div class="blog">
+                    <img src="assets/images/blog4.jpg" alt="Blog 4" width="100%">
+                    <h4>Blog Post 4</h4>
+                    <p>Summary of Blog Post 4.</p>
+                </div>
+            </div>
+            <div class="blog">
+                <h3>My Insights Sharing</h3>
+                <div class="blog">
+                    <img src="assets/images/blog5.jpg" alt="Blog 5" width="100%">
+                    <h4>Blog Post 5</h4>
+                    <p>Summary of Blog Post 5.</p>
+                </div>
+                <div class="blog">
+                    <img src="assets/images/blog6.jpg" alt="Blog 6" width="100%">
+                    <h4>Blog Post 6</h4>
+                    <p>Summary of Blog Post 6.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact_section container">
+        <div class="section_header">
+            <h2>Contact Me</h2>
+            <h4>Get in touch</h4>
+        </div>
+        <div class="contact_body">
+            <div class="contact_info">
+                <h3>Let's connect</h3>
+                <p>Email: example@example.com</p>
+                <p><a href="https://wa.me/1234567890" target="_blank">WhatsApp</a></p>
+                <p><a href="https://www.facebook.com/yourprofile" target="_blank">Facebook</a></p>
+                <p><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></p>
+                <p><a href="https://www.linkedin.com/in/yourprofile/" target="_blank">LinkedIn</a></p>
+            </div>
+            <div class="contact_form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Yasin Ahmed. All rights reserved.</p>
     </footer>
-    <!-- footer section ends -->
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
