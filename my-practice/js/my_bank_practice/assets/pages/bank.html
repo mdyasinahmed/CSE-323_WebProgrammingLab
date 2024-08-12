@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main>
+        <section class="bank_page">
+            <div class="bank_page_body">
+                <div class="section_header">
+                    <div class="my_bank_logo">
+                        <h1>My<span>Bank</span> Ltd.</h1>
+                    </div>
+                    <h3>Let's Check & Update Money!!</h3>
+                </div>
+                <div class="account_dashboard_section">
+                    <div class="row-screen">
+                        <div class="col">
+                            <div class="green-bg">
+                                <div class="dashboard_screen_text">
+                                    <h4>Deposit</h4>
+                                    <h2>$<span id="deposit-total">00</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="orange-bg">
+                                <div class="dashboard_screen_text">
+                                    <h4>Withdraw</h4>
+                                    <h2>$<span id="withdraw-total">00</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="violet-bg">
+                                <div class="dashboard_screen_text">
+                                    <h4>Balance</h4>
+                                    <h2>$<span id="balance-total">1240</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deposit_withdraw_section dw_row">
+                    <div class="deposit_section dw_col">
+                        <h4>Please Deposit</h4>
+                        <input type="text" name="" id="user-deposit" placeholder="$ Deposit Amount" class="deposit_field">
+                        <button id="btn-deposit" class="deposit_button">Deposit</button>
+                    </div>
+                    <div class="withdraw_section dw_col">
+                        <h4>Please Withdraw</h4>
+                        <input type="text" name="" id="withdraw" placeholder="$ Withdrawal Amount" class="withdraw_field">
+                        <button id="btn-withdraw" class="withdraw_button">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/deposit.js"></script>
+    <script src="../js/withdraw.js"></script>
+</body>
+</html>
