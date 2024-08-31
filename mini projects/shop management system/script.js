@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        if (username === 'admin' && password === 'password') {
+        if (username === 'admin' && password === 'user') {
             loginSection.classList.add('d-none');
             mainSection.classList.remove('d-none');
         } else {
