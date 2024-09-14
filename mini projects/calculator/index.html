@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedicated Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dedicated Calculator</h1>
+        <label for="numValues">Enter number of values:</label>
+        <input type="number" id="numValues" placeholder="How many values?" min="2">
+        <button id="generateInputs">Generate Inputs</button>
+
+        <div id="inputFields"></div>
+
+        <button id="calculate">Calculate</button>
+
+        <h2>Result: <span id="result"></span></h2>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
