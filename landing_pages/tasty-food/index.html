@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Foods</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Tasty Foods</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1>Welcome to Tasty Foods</h1>
+            <p>Your one-stop destination for delicious meals</p>
+            <a href="#" class="btn btn-primary">Order Online</a>
+            <a href="#" class="btn btn-secondary">Back to Table</a>
+        </div>
+    </header>
+
+    <!-- Popular Foods Section -->
+    <section class="popular-foods py-5">
+        <div class="container">
+            <h2 class="text-center">Our Popular Tasty Foods</h2>
+            <div class="row isotope">
+                <div class="col-md-4 food-item burger">
+                    <div class="card">
+                        <img src="images/burger.jpg" class="card-img-top" alt="Burger">
+                        <div class="card-body">
+                            <h5 class="card-title">Burger</h5>
+                            <p class="card-text">Get a 20% discount on your first order!</p>
+                            <a href="#" class="btn btn-danger">$12.90</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- More food items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Isotope Filtering Buttons -->
+    <div class="container text-center my-4">
+        <button class="btn btn-outline-primary" data-filter="*">All Foods</button>
+        <button class="btn btn-outline-primary" data-filter=".burger">Burgers</button>
+        <button class="btn btn-outline-primary" data-filter=".pasta">Pasta</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-light">
+        <p>&copy; 2024 Tasty Foods. All rights reserved.</p>
+    </footer>
+
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+/* Basic styling for Tasty Foods website */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.hero-section h1 {
+    color: #ff5722;
+}
+
+.popular-foods .card {
+    margin-bottom: 30px;
+}
