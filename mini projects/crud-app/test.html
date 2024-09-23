@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Load Test</title>
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .product img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Products</h1>
+    <div id="products"></div>
+
+    <script>
+        async function fetchProducts() {
+            try {
+                let response = await fetch('http://152.42.163.176:2008/api/v1/ReadProduct');
+                let products = await response.json();
+                let productsContainer = document.getElementById('products');
+
+                // Clear any existing content
+                productsContainer.innerHTML = '';
+
+                // Check if products is an array
+                if (Array.isArray(products)) {
+                    products.forEach(product => {
+                        let productElement = document.createElement('div');
+                        productElement.classList.add('product');
+                        productElement.innerHTML = `
+                            <h2>${product.ProductName}</h2>
+                            <p><strong>Product Code:</strong> ${product.ProductCode}</p>
+                            <p><strong>Quantity:</strong> ${product.Qty}</p>
+                            <p><strong>Unit Price:</strong> $${product.UnitPrice}</p>
+                            <p><strong>Total Price:</strong> $${product.TotalPrice}</p>
+                            <p><strong>Product Image:</strong> $${product.Img}</p>
+                        `;
+                        productsContainer.appendChild(productElement);
+                    });
+                } else {
+                    console.error('Unexpected response format:', products);
+                }
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }
+
+        fetchProducts();
+    </script>
+</body>
+
+</html>
