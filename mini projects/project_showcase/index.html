@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include Isotope -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Include Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <header class="bg-dark text-white py-2">
+    <nav class="container d-flex justify-content-between align-items-center">
+      <div class="logo">Your Portfolio</div>
+      <ul class="menu list-unstyled d-flex">
+        <li class="ml-3"><a href="#flutter-apps" class="text-white">Flutter Mobile Applications</a></li>
+        <li class="ml-3"><a href="#web-desktop" class="text-white">Web & Desktop Apps</a></li>
+        <li class="ml-3"><a href="#undergrad-projects" class="text-white">Undergraduate Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="showcase" id="project-showcase">
+    <div class="container">
+      <h1>My Projects</h1>
+
+      <div class="grid">
+        <!-- Flutter Projects -->
+        <div class="grid-item flutter card">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="project_image.jpg" alt="Project Image">
+              <span class="bookmark-icon"><i class="bi bi-phone"></i></span> <!-- Icon as a bookmark sticker -->
+            </div>
+            <div class="project-details">
+              <h3>Flutter Project 1</h3>
+              <div class="tech-icons">
+                <i class="bi bi-html5"></i> <i class="bi bi-css3"></i> <i class="bi bi-bootstrap"></i> <i class="bi bi-flutter"></i>
+              </div>
+              <p>This is a detailed description of the project that highlights its main features and functionality. It's developed using Flutter and other technologies.</p>
+              <div class="project-buttons">
+                <a href="#" class="btn btn-primary"><i class="bi bi-github"></i> GitHub Repo</a>
+                <a href="#" class="btn btn-secondary"><i class="bi bi-file-earmark-text"></i> Documentation</a>
+                <a href="#" class="btn btn-success"><i class="bi bi-link-45deg"></i> Live Preview</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat similar structure for other Flutter Projects -->
+        <div class="grid-item flutter card"> <!-- Flutter Project 2 --> </div>
+        <div class="grid-item flutter card"> <!-- Flutter Project 3 --> </div>
+        <div class="grid-item flutter card"> <!-- Flutter Project 4 --> </div>
+        <div class="grid-item flutter card"> <!-- Flutter Project 5 --> </div>
+
+        <!-- Web & Desktop Projects -->
+        <div class="grid-item web card"> <!-- Web Project 1 --> </div>
+        <div class="grid-item web card"> <!-- Web Project 2 --> </div>
+        <div class="grid-item web card"> <!-- Web Project 3 --> </div>
+        <div class="grid-item web card"> <!-- Web Project 4 --> </div>
+        <div class="grid-item web card"> <!-- Web Project 5 --> </div>
+        <div class="grid-item web card"> <!-- Web Project 6 --> </div>
+        <div class="grid-item web card"> <!-- Web Project 7 --> </div>
+
+        <!-- Undergraduate Projects -->
+        <div class="grid-item undergrad card"> <!-- Undergrad Project 1 --> </div>
+        <div class="grid-item undergrad card"> <!-- Undergrad Project 2 --> </div>
+        <div class="grid-item undergrad card"> <!-- Undergrad Project 3 --> </div>
+        <div class="grid-item undergrad card"> <!-- Undergrad Project 4 --> </div>
+        <div class="grid-item undergrad card"> <!-- Undergrad Project 5 --> </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Circle Filter Buttons with Bootstrap Icons -->
+  <div class="filter-controls position-fixed" style="top: 50%; right: 30px;">
+    <button class="btn btn-primary rounded-circle mb-2" data-filter="*">
+      <i class="bi bi-grid"></i> <!-- Icon for 'All' -->
+    </button>
+    <button class="btn btn-primary rounded-circle mb-2" data-filter=".flutter">
+      <i class="bi bi-phone"></i> <!-- Flutter Icon -->
+    </button>
+    <button class="btn btn-primary rounded-circle mb-2" data-filter=".web">
+      <i class="bi bi-laptop"></i> <!-- Web Icon -->
+    </button>
+    <button class="btn btn-primary rounded-circle mb-2" data-filter=".undergrad">
+      <i class="bi bi-mortarboard"></i> <!-- Undergrad Icon -->
+    </button>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-2">
+    <p>© 2024 Your Name. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
