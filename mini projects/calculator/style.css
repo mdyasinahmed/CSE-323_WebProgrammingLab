@@ -1,80 +1,69 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
+.calculator {
+    width: 300px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+}
+
+#display {
     width: 100%;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="number"] {
+    height: 50px;
+    text-align: right;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex: 2;
-    margin-right: 5px;
+    font-size: 24px;
+    border: none;
+    background-color: #eeeeee;
+    color: #333;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #ddd;
 }
 
 button {
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     width: 100%;
+    height: 60px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #f0f0f0;
 }
 
-#inputFields {
-    margin-bottom: 15px;
+button:active {
+    background-color: #ddd;
 }
 
-.input-group {
-    display: flex;
-    margin-bottom: 10px;
+button:nth-child(3n + 3) {
+    background-color: #ff9f43;
+    color: #fff;
 }
 
-.operator-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    flex: 1;
+button:nth-child(4n) {
+    background-color: #ff6348;
+    color: #fff;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-        max-width: 90%;
-    }
+button:last-child {
+    grid-column: span 2;
+    background-color: #009432;
+    color: #fff;
 }

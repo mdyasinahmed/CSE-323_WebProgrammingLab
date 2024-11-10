@@ -1,65 +1,31 @@
-document.getElementById('generateInputs').addEventListener('click', function () {
-    const numValues = document.getElementById('numValues').value;
-    const inputFields = document.getElementById('inputFields');
+function appendNumber(number) {
+    const display = document.getElementById("display");
+    display.value += number;
+}
 
-    inputFields.innerHTML = '';
-
-    for (let i = 0; i < numValues; i++) {
-        const inputGroup = document.createElement('div');
-        inputGroup.classList.add('input-group');
-
-        const numberInput = document.createElement('input');
-        numberInput.type = 'number';
-        numberInput.placeholder = `Value ${i + 1}`;
-        numberInput.classList.add('number-input');
-        inputGroup.appendChild(numberInput);
-
-        if (i < numValues - 1) {
-            const operatorSelect = document.createElement('select');
-            operatorSelect.classList.add('operator-input');
-
-            const operators = ['+', '-', '*', '/'];
-            operators.forEach(op => {
-                const option = document.createElement('option');
-                option.value = op;
-                option.textContent = op;
-                operatorSelect.appendChild(option);
-            });
-
-            inputGroup.appendChild(operatorSelect);
-        }
-
-        inputFields.appendChild(inputGroup);
+function appendOperator(operator) {
+    const display = document.getElementById("display");
+    const lastChar = display.value.slice(-1);
+    
+    if (display.value && !"+-*/.".includes(lastChar)) {
+        display.value += operator;
     }
-});
+}
 
-document.getElementById('calculate').addEventListener('click', function () {
-    const numberInputs = document.querySelectorAll('.number-input');
-    const operatorInputs = document.querySelectorAll('.operator-input');
-    let result = parseFloat(numberInputs[0].value);
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
 
-    for (let i = 0; i < operatorInputs.length; i++) {
-        const operator = operatorInputs[i].value;
-        const nextValue = parseFloat(numberInputs[i + 1].value);
+function deleteLast() {
+    const display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+}
 
-        switch (operator) {
-            case '+':
-                result += nextValue;
-                break;
-            case '-':
-                result -= nextValue;
-                break;
-            case '*':
-                result *= nextValue;
-                break;
-            case '/':
-                result /= nextValue;
-                break;
-            default:
-                alert('Invalid operator!');
-                return;
-        }
+function calculate() {
+    const display = document.getElementById("display");
+    try {
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = "Error";
     }
-
-    document.getElementById('result').textContent = result;
-});
+}
