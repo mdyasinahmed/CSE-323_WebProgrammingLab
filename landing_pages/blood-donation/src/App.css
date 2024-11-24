@@ -1,0 +1,171 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b71c1c;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbe9e7;
+  padding: 50px;
+  color: #b71c1c;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+}
+
+.hero-form {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #b71c1c;
+  border-radius: 8px;
+}
+
+.hero-form h2 {
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+.hero-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-form input,
+.hero-form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hero-form button {
+  background-color: #b71c1c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-form button:hover {
+  background-color: #7f0000;
+}
+
+/* About Section */
+.about {
+  padding: 50px;
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+/* Services Section */
+.services {
+  padding: 50px;
+  background-color: #fce4ec;
+}
+
+.services .service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.services .card {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #b71c1c;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.services .card h3 {
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px;
+  background-color: #fbe9e7;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: #b71c1c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #7f0000;
+}
+
+/* Footer */
+.footer {
+  background-color: #b71c1c;
+  color: white;
+  padding: 10px;
+}
