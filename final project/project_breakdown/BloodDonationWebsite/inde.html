@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>LifeDrops - Blood Donation</h1>
+    <p>Connecting donors with those in need.</p>
+  </header>
+
+  <section class="form-section">
+    <h2>Register as a Donor</h2>
+    <form id="donorForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="bloodGroup" placeholder="Blood Group (e.g., A+)" required>
+      <input type="text" id="location" placeholder="Location (City/Area)" required>
+      <input type="text" id="contact" placeholder="Contact Number" required>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <section class="search-section">
+    <h2>Search for Donors</h2>
+    <form id="searchForm">
+      <input type="text" id="searchBloodGroup" placeholder="Blood Group (e.g., B-)" required>
+      <button type="submit">Search</button>
+    </form>
+    <div id="searchResults"></div>
+  </section>
+
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
